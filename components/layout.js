@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const name = 'Mourtalla Faty DIAWARA'
 export const siteTitle = 'Next.js Sample Website'
@@ -11,6 +11,13 @@ export const siteTitle = 'Next.js Sample Website'
 export default function Layout({ children, home }) {
 
 const [dynamicName, setDynamicName] = useState('Mourtalla Faty DIAWARA');
+
+useEffect(() => {
+ setTimeout(() => {
+  setDynamicName("Amy colle DIAWARA")
+ }, 2000);
+}, [])
+
 
   return (
     <div className={styles.container}>
