@@ -3,11 +3,15 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import { useState } from 'react'
 
-const name = '[Your Name]'
+const name = 'Mourtalla Faty DIAWARA'
 export const siteTitle = 'Next.js Sample Website'
 
 export default function Layout({ children, home }) {
+
+const [dynamicName, setDynamicName] = useState('Mourtalla Faty DIAWARA');
+
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +40,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{dynamicName}</h1>
           </>
         ) : (
           <>
